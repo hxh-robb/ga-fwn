@@ -21,10 +21,8 @@ public class S {
 //                System.out.println(input);
 //            }
 
-            File tmp = File.createTempFile("file-",".file");
+            File tmp = File.createTempFile("tmp-",".file");
             FileOutputStream fout = new FileOutputStream(tmp);
-            System.out.println(tmp.exists());
-            System.out.println(tmp.length());
             int len; byte [] buffer = new byte[1024*8];
             while((len=sin.read(buffer)) > 0){
                 fout.write(buffer,0,len);
