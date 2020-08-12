@@ -19,6 +19,8 @@ public class C {
         while( (len = fin.read(buffer)) > 0) {
             sout.write(buffer,0, len);
         }
+        fin.close();
+        sout.close();
         s.close();
     }
 }
