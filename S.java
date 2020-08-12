@@ -6,10 +6,11 @@ import java.net.Socket;
 public class S {
 
     public static void main(String[] args) throws IOException {
-	    int port = Integer.parseInt(args[0]);
+        int port = Integer.parseInt(args[0]);
 
         ServerSocket ss = new ServerSocket();
         ss.bind(new InetSocketAddress("0.0.0.0", port));
+        System.out.println(ss);
         Socket s;
         while( (s = ss.accept()) != null ){
             System.out.println(s);
@@ -30,6 +31,7 @@ public class S {
             fout.flush();
             fout.close();
             System.out.println(tmp.length() + ":" + tmp.getAbsolutePath());
+            sin.close();
             s.close();
         }
     }
