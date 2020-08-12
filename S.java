@@ -28,7 +28,8 @@ public class S {
                 fout.write(buffer,0,len);
             }
             fout.flush();
-            System.out.printf(tmp.getAbsolutePath());
+            fout.close();
+            System.out.println(tmp.length() + ":" + tmp.getAbsolutePath());
             s.close();
         }
     }
